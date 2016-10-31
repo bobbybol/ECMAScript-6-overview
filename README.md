@@ -3,11 +3,11 @@ Summary of the most important new features of ES6 and how they differ from ES5.
 
 This short guide is written for colleagues and pair-programming buddies to use as a reference while working through code that was written in or refactored using new ES6 syntax/functionalities.
 
-## `let` and `const`
+## let and const
 The first thing you'll notice when looking through ES6 code, is its lack of `var`s.
 This is because `var` has essentially (save for some rare edge cases) been replaced by `let` and `const`.
 
-### `let`
+### The `let` keyword:
 We can use the `let` keyword to create _block scoping_ in locations where we weren't able to do so before.
 
 With `var` the value changes inside the `if` statement:
@@ -55,4 +55,27 @@ for(let i=0; i<45; i++) {
 ```
 ..will eliminate this problem, because now the `i` used in the click handler is the index number local to the `for` loop and therefore has the value of its current iteration, rather than the final value 45 as an `i` value hoisted to the outside of the `for` loop.
 
-### `const`
+### The `const` keyword:
+The `const` keyword is short for 'constant' (surprise!) and allows us to set variables that cannot be _reassigned_.
+```javascript
+const x = 1;
+
+x = 2
+// TypeError: Assignment to constant variable
+```
+
+But `const` **_does not_** make a value _immutable_.
+```javascript
+const x = {
+  feline: atiger
+};
+
+x.feline = alion;
+console.log(x); // Logs { feline: alion }
+
+x = {
+  feline: apuma
+};
+// TypeError: Assignment to constant variable
+```
+We see we can _change_ object property values and even add new properties, but we cannot reassign `x`.
