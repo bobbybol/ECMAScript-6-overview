@@ -81,3 +81,24 @@ x = {
 // TypeError: Assignment to constant variable
 ```
 We see we can _change_ object property values and even add new properties, but we cannot reassign `x`.
+
+## Template strings
+Anyone who has used an JavaScript framework has seen a way to use variables directly in their markup (and often bind them to the model in a MV\*-type fashion). The new ES6 template strings allow us to do the same in JavaScript strings using backticks `` `your string with a ${variable}.` ``.
+
+The old way to use variables in strings was to concatenate them:
+```javascript
+function greet(firstName) {
+  console.log("Hello " + firstName);
+}
+
+greet(Raoul); //Logs Hello Raoul
+```
+
+In ES6 however we can use variables directly _in_ our strings using backticks:
+```javascript
+function greet(firstName) {
+  console.log(`Hello ${firstName}`);
+}
+
+greet(Raoul); //Logs Hello Raoul
+```
