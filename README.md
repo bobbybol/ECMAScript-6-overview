@@ -43,4 +43,16 @@ for(var i=0; i<45; i++) {
   document.getElementsByTagName('section')[0].appendChild(div);
 }
 ```
-The above will log out /#45 for each and every `div` that's clicked. Simply replacing `var` for `let` in the `for` loop like so: ```javascript for(let i=0; i<45; i++) {...``` will eliminate this problem, because now the `i` used in the click handler is the index number local to the `for` loop and therefore has the value of its current iteration, rather than the end value 45 as an `i` value hoisted to the outside of the `for` loop.
+The above will log out /#45 for each and every `div` that's clicked. Simply replacing `var` for `let` in the `for` loop like so: 
+```javascript
+for(let i=0; i<45; i++) {
+  var div = document.createElement('div');
+  div.onclick = function() {
+    alert("you clicked on a box #" + i);
+  }
+  document.getElementsByTagName('section')[0].appendChild(div);
+}
+```
+..will eliminate this problem, because now the `i` used in the click handler is the index number local to the `for` loop and therefore has the value of its current iteration, rather than the final value 45 as an `i` value hoisted to the outside of the `for` loop.
+
+### `const`
