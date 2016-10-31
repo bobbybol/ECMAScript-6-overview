@@ -45,7 +45,7 @@ for(var i=0; i<45; i++) {
   document.getElementsByTagName('section')[0].appendChild(div);
 }
 ```
-The above will log out /#45 for each and every `div` that's clicked. Simply replacing `var` for `let` in the `for` loop like so: 
+The above will log out \#45 for each and every `div` that's clicked. Simply replacing `var` for `let` in the `for` loop like so: 
 ```javascript
 for(let i=0; i<45; i++) {
   var div = document.createElement('div');
