@@ -114,8 +114,8 @@ For example, if we just put a the variable name of one array into another array,
 const felines = ["Alion", "Atiger", "Acat"];
 const canines = ["Awolf", "Afox", "Adog"];
 
-const animals = ["Whale", "Giraffe", felines, "Snake", canines, "Dragon"];
-console.log(animals); //logs ["Awhale", "Agiraffe", Array[3], "aSnake", Array[3], "aDragon"];
+const animals = ["Awhale", "Agiraffe", felines, "Asnake", canines, "Adragon"];
+console.log(animals); //logs ["Awhale", "Agiraffe", Array[3], "Asnake", Array[3], "Adragon"];
 ```
 
 But with the spread operater, we can 'inject' the elements of the first array directly into next:
@@ -123,8 +123,8 @@ But with the spread operater, we can 'inject' the elements of the first array di
 const felines = ["Alion", "Atiger", "Acat"];
 const canines = ["Awolf", "Afox", "Adog"];
 
-const animals = ["Awhale", "Agiraffe", ...felines, "aSnake", ...canines, "aDragon"];
-console.log(animals); //logs ["Whale", "Giraffe", Array[3], "Snake", Array[3], "Dragon"];
+const animals = ["Awhale", "Agiraffe", ...felines, "Asnake", ...canines, "Adragon"];
+console.log(animals); //logs ["Awhale", "Agiraffe", "Alion", "Atiger", "Acat", "Asnake", "Awolf", "Afox", "Adog", "Adragon"];
 ```
 
 ## Default function parameters
@@ -141,7 +141,7 @@ add(3);   //logs 10 (3+7)
 add(2,6); //logs 8  (2+6)
 ```
 
-## Enhancing object literals
+## Enhanced object literals
 Object literals can now be declared in a shorter fashion:
 ```javascript
 // the old way
