@@ -173,6 +173,52 @@ let dairo = {
 };
 ```
 
+## (fat) Arrow Functions
+Arrow functions have an abbreviated syntax for working with functions:
+```javascript
+// use example of MPJ
+```
 
+### Lexical `this`
+Fat arrow functions have a more intuitive handling of 'current' object context.
+
+In previous versions of JavaScript, you had to use some tricks to keep a correct reference to `this` when using it inside a nested method or function, because using `this` within a nested method or function would automatically refer to that method or function:
+```javascript
+var alioner = {
+  firstName: "Julian",
+  secretNerdHobbies: ["read the Dark Tower series", "camp in CoD4", "hum songs from cartoons"],
+  printHobbies: function() {
+    this.secretNerdHobbies.forEach(function(hobby) {
+      var toPrint = this.firstName + " likes to " + hobby;
+      console.log(toPrint);
+    });
+  }
+};
+
+alioner.printHobbies(); 
+// logs: 
+// undefined likes to read the Dark Tower series
+// undefined likes to camp in CoD4
+// undefined likes to hum songs from cartoons
+```
+We would usually fix the above code with a `var self = this;` trick right inside the methode declaration, but arrow functions save us the trouble:
+```javascript
+let alioner = {
+  firstName: "Julian",
+  secretNerdHobbies: ["read the Dark Tower series", "camp in CoD4", "hum songs from cartoons"],
+  printHobbies() {
+    this.secretNerdHobbies.forEach(hobby => {
+      let toPrint = this.firstName + " likes to " + hobby;
+      console.log(toPrint);
+    });
+  }
+};
+
+alioner.printHobbies(); 
+// logs: 
+// Julian likes to read the Dark Tower series
+// Julian likes to camp in CoD4
+// Julian likes to hum songs from cartoons
+```
 
 ## Object.assign();
