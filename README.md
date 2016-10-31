@@ -159,7 +159,7 @@ var dairo = {
 };
 
 // the ES6 way
-var dairo = {
+let dairo = {
   // a property
   position: "programmer",
   
