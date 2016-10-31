@@ -102,4 +102,77 @@ function greet(firstName) {
 
 greet(Raoul); //Logs Hello Raoul
 ```
-a
+
+## Spread operators
+The spread operator can do a lot of powerful things with just three little dots...
+It can turn elements of an array:
+- into arguments of a function call
+- into elements of an array literal
+
+For example, if we just put a the variable name of one array into another array, in ES5 this doesn't put the actual elements of the first array into the second:
+```javascript
+const felines = ["Alion", "Atiger", "Acat"];
+const canines = ["Awolf", "Afox", "Adog"];
+
+const animals = ["Whale", "Giraffe", felines, "Snake", canines, "Dragon"];
+console.log(animals); //logs ["Awhale", "Agiraffe", Array[3], "aSnake", Array[3], "aDragon"];
+```
+
+But with the spread operater, we can 'inject' the elements of the first array directly into next:
+```javascript
+const felines = ["Alion", "Atiger", "Acat"];
+const canines = ["Awolf", "Afox", "Adog"];
+
+const animals = ["Awhale", "Agiraffe", ...felines, "aSnake", ...canines, "aDragon"];
+console.log(animals); //logs ["Whale", "Giraffe", Array[3], "Snake", Array[3], "Dragon"];
+```
+
+## Default function parameters
+In ES6, we can give a function 'default' parameters which will be used if the parameters are not specified in the function call.
+
+A basic example:
+```javascript
+function add(x=5, y=7) {
+  console.log(x + y);
+}
+
+add();    //logs 12 (5+7)
+add(3);   //logs 10 (3+7)
+add(2,6); //logs 8  (2+6)
+```
+
+## Enhancing object literals
+Object literals can now be declared in a shorter fashion:
+```javascript
+// the old way
+var dairo = {
+  // a property
+  position: "programmer",
+  
+  // a property where name and value are the same
+  fast: fast,
+  
+  // a method
+  attack: function(enemy) {
+    console.log("Scorpion kick the " + enemy);
+  }
+};
+
+// the ES6 way
+var dairo = {
+  // a property
+  position: "programmer",
+  
+  // a property where name and value are the same
+  fast,
+  
+  // a method
+  attack (enemy) {
+    console.log("Scorpion kick the " + enemy);
+  }
+};
+```
+
+
+
+## Object.assign();
