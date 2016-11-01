@@ -307,5 +307,11 @@ console.log(vacationMarketing(vacation)); //logs "Come to the moon and do some m
 ```
 See how the function parses the object that's passed to it and automatically maps values of the 'chosen' properties to variables of the same name.
 
-
 ## Object.assign();
+
+## ES6 Class Syntax
+ES6 offers us a new way of making classes.
+[quote]
+#Notice
+This is an important message about this post to which you should all pay special attention.
+[/quote]
