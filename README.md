@@ -123,6 +123,8 @@ function greet(firstName) {
 greet(Raoul); //Logs Hello Raoul
 ```
 
+**[Back to top](#table-of-contents)**
+
 ## Spread operators
 The spread operator can do a lot of powerful things with just three little dots...
 It can turn elements of an array:
@@ -147,6 +149,8 @@ const animals = ["Awhale", "Agiraffe", ...felines, "Asnake", ...canines, "Adrago
 console.log(animals); //logs ["Awhale", "Agiraffe", "Alion", "Atiger", "Acat", "Asnake", "Awolf", "Afox", "Adog", "Adragon"];
 ```
 
+**[Back to top](#table-of-contents)**
+
 ## Default function parameters
 In ES6, we can give a function 'default' parameters which will be used if the parameters are not specified in the function call.
 
@@ -160,6 +164,8 @@ add();    //logs 12 (5+7)
 add(3);   //logs 10 (3+7)
 add(2,6); //logs 8  (2+6)
 ```
+
+**[Back to top](#table-of-contents)**
 
 ## Enhanced object literals
 Object literals can now be declared in a shorter fashion:
@@ -192,6 +198,8 @@ let dairo = {
   }
 };
 ```
+
+**[Back to top](#table-of-contents)**
 
 ## (fat) Arrow Functions
 Arrow functions have an abbreviated syntax for working with functions:
@@ -260,6 +268,8 @@ alioner.printHobbies();
 // Julian likes to hum songs from cartoons
 ```
 
+**[Back to top](#table-of-contents)**
+
 ## Destructuring assignment
 Destructuring assignment gives us an easy way to extract data from arrays and objects and assign them to variables.
 
@@ -327,7 +337,12 @@ console.log(vacationMarketing(vacation)); //logs "Come to the moon and do some m
 ```
 See how the function parses the object that's passed to it and automatically maps values of the 'chosen' properties to variables of the same name.
 
+**[Back to top](#table-of-contents)**
+
 ## ES6 Modules 
+
+
+**[Back to top](#table-of-contents)**
 
 ## ES6 Class Syntax
 ES6 offers us a new way of making classes.
@@ -359,6 +374,8 @@ The nice thing about the new `class` syntax is that we can easily channel what p
 ### Class inheritance
 
 
+**[Back to top](#table-of-contents)**
+
 ## Object.assign()
 ES6 brought some syntactic sugar to those who favor classes and inheritance, but luckily for us there's also some genuinely awesome sugar dubbed `Object.assign()`. Together with the ES5 `Object.create()`, we can easily do OLOO style programming using prototypal delegation and never _ever_ have to look at classes again.
 
@@ -381,3 +398,5 @@ Object.assign() by itself is real simple - it takes a target object as first arg
   // } 
 ```
 To show the true benefits of Object.assign() in combination with Object.create() would go beyond the scope of this article. However, I'm putting together another guide that focues solely on the creation of objects in JavaScript, which can be found here: [Prototypal Delegation in JavaScript](https://github.com/bobbybol/prototypal-delegation-in-javascript).
+
+**[Back to top](#table-of-contents)**
