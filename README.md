@@ -7,8 +7,8 @@ This list is by no means exhaustive, but should cover all the features to get yo
 
 ## Table of Contents
   1. [let and const](#let-and-const)
-    + [The `let` keyword:](#the-let-keyword)
-    + [The `const` keyword:](#the-const-keyword)
+    + [The `let` keyword](#the-let-keyword)
+    + [The `const` keyword](#the-const-keyword)
   1. [Template strings](#template-strings)
   1. [Spread operators](#spread-operators)
   1. [Default function parameters](#default-function-parameters)
@@ -27,7 +27,7 @@ This list is by no means exhaustive, but should cover all the features to get yo
 The first thing you'll notice when looking through ES6 code, is its lack of `var`s.
 This is because `var` has essentially (save for some rare edge cases) been replaced by `let` and `const`.
 
-### The `let` keyword:
+### The `let` keyword
 We can use the `let` keyword to create _block scoping_ in locations where we weren't able to do so before.
 
 With `var` the value changes inside the `if` statement:
@@ -75,7 +75,7 @@ for(let i=0; i<45; i++) {
 ```
 ..will eliminate this problem, because now the `i` used in the click handler is the index number local to the `for` loop and therefore has the value of its current iteration, rather than the final value 45 as an `i` value hoisted to the outside of the `for` loop.
 
-### The `const` keyword:
+### The `const` keyword
 The `const` keyword is short for 'constant' (surprise!) and allows us to set variables that cannot be _reassigned_.
 ```javascript
 const x = 1;
