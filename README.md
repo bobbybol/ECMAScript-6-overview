@@ -311,7 +311,9 @@ See how the function parses the object that's passed to it and automatically map
 
 ## ES6 Class Syntax
 ES6 offers us a new way of making classes.
-[quote]
-#Notice
-This is an important message about this post to which you should all pay special attention.
-[/quote]
+**Note that the following is _just_ syntactic sugar, JavaScript _has no_ classes!**
+
+I personally avoid using 'classes' and 'inheritance', favoring 'OLOO' and 'composition', but it is very probable we will encounter classes in JavaScript examples and documentation, so we at least need to understand the syntax:
+```javascript
+
+```
