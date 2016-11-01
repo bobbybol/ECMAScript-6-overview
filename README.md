@@ -221,4 +221,72 @@ alioner.printHobbies();
 // Julian likes to hum songs from cartoons
 ```
 
+## Destructuring assignment
+Destructuring assignment gives us an easy way to extract data from arrays and objects and assign them to variables.
+
+### Destructuring arrays
+In ES5, the way to assign elements of an array to a variable had to be done one by one, separate from the array declaration.
+```javascript
+var bannerHeroes = ["Michel", "Carlos", "Laurent", "Marijn", "Rodney"];
+
+// if we want banner heroes that suck at 'Gang Beasts', we can get them like so:
+var firstToBeThrownOfTheBuilding   = bannerHeroes[0]; //Michel
+var secondToBeThrownOfTheBuilding  = bannerHeroes[3]; //Marijn
+```
+
+In ES6, we can map array elements to variables directly while declaring the array:
+```javascript
+[firstToBeThrownOfTheBuilding, , ,secondToBeThrownOfTheBuilding, ] = ["Michel", "Carlos", "Laurent", "Marijn", "Rodney"];
+
+// if we want banner heroes that suck at 'Gang Beasts', we can get them like so:
+console.log(firstToBeThrownOfTheBuilding); //Michel
+console.log(secondToBeThrownOfTheBuilding); //Marijn
+```
+Note above that you don't have to name every value in the array, you can just skip them by not entering any name.
+
+### Destructuring objects
+In ES5 we can get to an objects properties by referring to both the object and the property name
+```javascript
+var sandwich = {
+  title: "The Julian",
+  price: 42,
+  description: "Disgustingly tasty",
+  ingredients: ['bread', 'peanut butter', 'sausage', 'cucumber', 'sambal']
+}
+
+console.log(sandwich.title); //logs "The Julian"
+console.log(sandwich.price); //logs 42
+```
+
+In ES6 we can simply declare an empty object, with variable names that can be immediately accessed from the object's parent scope.
+```javascript
+let {title, price} = {
+  title: "The Julian",
+  price: 42,
+  description: "Disgustingly tasty",
+  ingredients: ['bread', 'peanut butter', 'sausage', 'cucumber', 'sambal']
+}
+
+console.log(title); //logs "The Julian"
+console.log(price); //logs 42
+```
+
+The real use for destructuring assignment however becomes apparent when we use it as predefined variables we want to create when passing an object to a function:
+```javascript
+let vacation = {
+  destination: "the moon",
+  travelers: 2,
+  activity: "moonwalking",
+  cost: 20000
+};
+
+function vacationMarketing({destination, activity}) {
+  return `Come to ${destination} and do some ${activity}!`;
+}
+
+console.log(vacationMarketing(vacation)); //logs "Come to the moon and do some moonwalking!"
+```
+See how the function parses the object that's passed to it and automatically maps values of the 'chosen' properties to variables of the same name.
+
+
 ## Object.assign();
