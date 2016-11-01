@@ -176,8 +176,27 @@ let dairo = {
 ## (fat) Arrow Functions
 Arrow functions have an abbreviated syntax for working with functions:
 ```javascript
-// use example of MPJ
+const myArray = [1, 2, 3];
+
+// ES5 way of writing functions
+const squares = myArray.map(function (x) {
+  return x * x;
+});
+
+// Shorter with an arrow function when replacing 'function' keyword for '=>':
+const squares = myArray.map((x) => {
+  return x * x;
+});
+
+// Even shorter, because if there's only one argument it doesn't need braces:
+const squares = myArray.map(x => {
+  return x * x;
+});
+
+// Even shorter, because if your return code is one statement, you can omit return and enclosing brackets
+const squares = myArray.map(x => x * x);
 ```
+Beautiful! And very useful for functional programming, to have short simple functions that are easy to reason about and can be chained together.
 
 ### Lexical `this`
 Fat arrow functions have a more intuitive handling of 'current' object context.
