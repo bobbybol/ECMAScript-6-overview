@@ -307,7 +307,7 @@ console.log(vacationMarketing(vacation)); //logs "Come to the moon and do some m
 ```
 See how the function parses the object that's passed to it and automatically maps values of the 'chosen' properties to variables of the same name.
 
-## Object.assign();
+
 
 ## ES6 Class Syntax
 ES6 offers us a new way of making classes.
@@ -315,5 +315,29 @@ ES6 offers us a new way of making classes.
 
 I personally avoid using 'classes' and 'inheritance', favoring 'OLOO' and 'composition', but it is very probable we will encounter classes in JavaScript examples and documentation, so we at least need to understand the syntax:
 ```javascript
-
+  class Alioner {
+    // properties specific to the future instance go in the constructor function
+    constructor(position, geekLevel) {
+      this.position   = position;
+      this.geekLevel  = geekLevel;
+    }
+    
+    // methods that are the same for every instance are declared outside of constructor function
+    describeYourself() {
+      console.log(`I am a ${this.position} with a geek level of ${this.geekLevel}.`);
+    }
+  }
+  
+  var Marijn = new Alioner("animator", 2000);
+  var Dennis = new Alioner("designer", -5);
+  
+  Marijn.describeYourself(); //logs "I am a animator with a geek level of 2000.
+  Dennis.describeYourself(); //logs "I am a designer with a geek level of -5.
 ```
+The nice thing about the new `class` syntax is that we can easily channel what properties/methods are re-created with each instance, and which properties/methods are delegated to the instance's prototype. This means that (if used correctly), the creation of objects is automatically geared for optimal performance.
+
+### Class inheritance
+
+
+## Object.assign()
+ES6 brought some syntactic sugar to those who favor classes and inheritance, but luckily for us there's also a genuinely awesome feature called `Object.assign()`. Together with the ES5 `Object.create()`, we can easily do OLOO style programming using prototypal delegation and never _ever_ have to look at classes again.
