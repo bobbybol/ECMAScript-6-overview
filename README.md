@@ -372,7 +372,40 @@ Dennis.describeYourself(); //logs "I am a designer with a geek level of -5.
 The nice thing about the new `class` syntax is that we can easily channel what properties/methods are re-created with each instance, and which properties/methods are delegated to the instance's prototype. This means that (if used correctly), the creation of objects is automatically geared for optimal performance.
 
 ### Class inheritance
+Once we have a class, we can inherit from it and create another class. This is a process called 'extending' the class.
+If we use the previous example with the 'Alioner' class:
+```javascript
+// original class
+class Alioner {
+  constructor(position, geekLevel) {
+    this.position   = position;
+    this.geekLevel  = geekLevel;
+  }
+  describeYourself() {
+    console.log(`I am a ${this.position} with a geek level of ${this.geekLevel}.`);
+  }
+}
 
+// new extended class
+class AlionManager extends Alioner {
+  constructor(favoriteSandwich) {
+    // super works on inherited properties
+    super("project manager", 1000000);
+    
+    // ..and we can also add new properties
+    this.favoriteSandwich = favoriteSandwich;
+  }
+  // ..and add new methods
+  whatAreYouEating() {
+    console.log(`I am eating a sandwich I invented myself called ${this.favoriteSandwich}.`);
+  }
+}
+
+var Julian = new AlionManager("the Julian");
+
+Julian.describeYourself(); //logs "I am a project manager with a geek level of 1000000.
+Julian.whatAreYouEating(); //logs "I am eating a sandwich I invented myself called the Julian."
+```
 
 **[Back to top](#table-of-contents)**
 
@@ -389,7 +422,7 @@ Object.assign() by itself is real simple - it takes a target object as first arg
   
   let alion = Object.assign({}, obj1, obj2, obj3, { expertise4: "Raoul's Café" });
   
-  // alion is now an object like so: 
+  // 'alion' is now an object like so: 
   // Object {
   //   expertise1: "Display Advertising",
   //   expertise2: "Design & Development",
