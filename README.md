@@ -5,6 +5,23 @@ This short guide is written for colleagues and pair-programming buddies to use a
 
 This list is by no means exhaustive, but should cover all the features to get you up and running with modern JavaScript frameworks such as **vue.js**, **ReactJS**, and **Aurelia**.
 
+## Table of Contents
+  * [let and const](#let-and-const)
+    + [The `let` keyword:](#the--let--keyword-)
+    + [The `const` keyword:](#the--const--keyword-)
+  * [Template strings](#template-strings)
+  * [Spread operators](#spread-operators)
+  * [Default function parameters](#default-function-parameters)
+  * [Enhanced object literals](#enhanced-object-literals)
+  * [(fat) Arrow Functions](#-fat--arrow-functions)
+    + [Lexical `this`](#lexical--this-)
+  * [Destructuring assignment](#destructuring-assignment)
+    + [Destructuring arrays](#destructuring-arrays)
+    + [Destructuring objects](#destructuring-objects)
+  * [ES6 Class Syntax](#es6-class-syntax)
+    + [Class inheritance](#class-inheritance)
+  * [Object.assign()](#objectassign--)
+
 ## let and const
 The first thing you'll notice when looking through ES6 code, is its lack of `var`s.
 This is because `var` has essentially (save for some rare edge cases) been replaced by `let` and `const`.
