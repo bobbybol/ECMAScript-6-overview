@@ -315,24 +315,24 @@ ES6 offers us a new way of making classes.
 
 I personally avoid using 'classes' and 'inheritance', favoring 'OLOO' and 'composition', but it is very probable we will encounter classes in JavaScript examples and documentation, so we at least need to understand the syntax:
 ```javascript
-  class Alioner {
-    // properties specific to the future instance go in the constructor function
-    constructor(position, geekLevel) {
-      this.position   = position;
-      this.geekLevel  = geekLevel;
-    }
-    
-    // methods that are the same for every instance are declared outside of constructor function
-    describeYourself() {
-      console.log(`I am a ${this.position} with a geek level of ${this.geekLevel}.`);
-    }
+class Alioner {
+  // properties specific to the future instance go in the constructor function
+  constructor(position, geekLevel) {
+    this.position   = position;
+    this.geekLevel  = geekLevel;
   }
-  
-  var Marijn = new Alioner("animator", 2000);
-  var Dennis = new Alioner("designer", -5);
-  
-  Marijn.describeYourself(); //logs "I am a animator with a geek level of 2000.
-  Dennis.describeYourself(); //logs "I am a designer with a geek level of -5.
+
+  // methods that are the same for every instance are declared outside of constructor function
+  describeYourself() {
+    console.log(`I am a ${this.position} with a geek level of ${this.geekLevel}.`);
+  }
+}
+
+var Marijn = new Alioner("animator", 2000);
+var Dennis = new Alioner("designer", -5);
+
+Marijn.describeYourself(); //logs "I am a animator with a geek level of 2000.
+Dennis.describeYourself(); //logs "I am a designer with a geek level of -5.
 ```
 The nice thing about the new `class` syntax is that we can easily channel what properties/methods are re-created with each instance, and which properties/methods are delegated to the instance's prototype. This means that (if used correctly), the creation of objects is automatically geared for optimal performance.
 
@@ -340,4 +340,24 @@ The nice thing about the new `class` syntax is that we can easily channel what p
 
 
 ## Object.assign()
-ES6 brought some syntactic sugar to those who favor classes and inheritance, but luckily for us there's also a genuinely awesome feature called `Object.assign()`. Together with the ES5 `Object.create()`, we can easily do OLOO style programming using prototypal delegation and never _ever_ have to look at classes again.
+ES6 brought some syntactic sugar to those who favor classes and inheritance, but luckily for us there's also some genuinely awesome sugar dubbed `Object.assign()`. Together with the ES5 `Object.create()`, we can easily do OLOO style programming using prototypal delegation and never _ever_ have to look at classes again.
+
+Object.assign() by itself is real simple - it takes a target object as first argument, and then as many source objects as you'd like to assign their properties to the target object
+```javascript
+  // Object.assign(target, ...sources);  
+  
+  let obj1 = { expertise1: "Display Advertising" };
+  let obj2 = { expertise2: "Design & Development" };
+  let obj3 = { expertise3: "Motion" };
+  
+  let alion = Object.assign({}, obj1, obj2, obj3, { expertise4: "Raoul's Café" });
+  
+  // alion is now an object like so: 
+  // Object {
+  //   expertise1: "Display Advertising",
+  //   expertise2: "Design & Development",
+  //   expertise3: "Motion", 
+  //   expertise4: "Raoul's Café"
+  // } 
+```
+To show the true benefits of Object.assign() in combination with Object.create() would go beyond the scope of this article. However, I'm putting together another guide that focues solely on the creation of objects in JavaScript, which can be found here: [Prototypal Delegation in JavaScript](https://github.com/bobbybol/prototypal-delegation-in-javascript).
