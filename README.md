@@ -18,6 +18,7 @@ This list is by no means exhaustive, but should cover all the features to get yo
   1. [Destructuring assignment](#destructuring-assignment)
     + [Destructuring arrays](#destructuring-arrays)
     + [Destructuring objects](#destructuring-objects)
+  1. [ES6 Modules](#es6-modules)
   1. [ES6 Class Syntax](#es6-class-syntax)
     + [Class inheritance](#class-inheritance)
   1. [Object.assign()](#objectassign)
@@ -98,6 +99,8 @@ x = {
 // TypeError: Assignment to constant variable
 ```
 We see we can _change_ object property values and even add new properties, but we cannot reassign `x`.
+
+**[Back to top](#table-of-contents)**
 
 ## Template strings
 Anyone who has used an JavaScript framework has seen a way to use variables directly in their markup (and often bind them to the model in a MV\*-type fashion). The new ES6 template strings allow us to do the same in JavaScript strings using backticks `` `your string with a ${variable}.` ``.
@@ -324,7 +327,7 @@ console.log(vacationMarketing(vacation)); //logs "Come to the moon and do some m
 ```
 See how the function parses the object that's passed to it and automatically maps values of the 'chosen' properties to variables of the same name.
 
-
+## ES6 Modules 
 
 ## ES6 Class Syntax
 ES6 offers us a new way of making classes.
