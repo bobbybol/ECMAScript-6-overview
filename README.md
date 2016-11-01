@@ -7,14 +7,14 @@ This list is by no means exhaustive, but should cover all the features to get yo
 
 ## Table of Contents
   1. [let and const](#let-and-const)
-    + [The `let` keyword:](#the-let-keyword-)
-    + [The `const` keyword:](#the-const-keyword-)
+    + [The `let` keyword:](#the-let-keyword)
+    + [The `const` keyword:](#the-const-keyword)
   1. [Template strings](#template-strings)
   1. [Spread operators](#spread-operators)
   1. [Default function parameters](#default-function-parameters)
   1. [Enhanced object literals](#enhanced-object-literals)
   1. [(fat) Arrow Functions](#fat-arrow-functions)
-    + [Lexical `this`](#lexical-this-)
+    + [Lexical `this`](#lexical-this)
   1. [Destructuring assignment](#destructuring-assignment)
     + [Destructuring arrays](#destructuring-arrays)
     + [Destructuring objects](#destructuring-objects)
