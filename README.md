@@ -371,13 +371,13 @@ Note that one the first line, we import blocks of code from a module: _this modu
 
 ### Extra features
 
-**Renaming exports**
+**Renaming exports**  
 We can rename the exported functions.
 ```javascript
 export {generateRandom as random, sum as doSum}
 ```
 
-**Importing complete utility**
+**Importing complete utility**  
 We can also import a complete utility as an object and access exported values ar properties.
 ```javascript
 import 'utility' as utils;
@@ -385,7 +385,7 @@ import 'utility' as utils;
 console.log(utils.sum(28, 14)); //logs 42
 ```
 
-**Default Exports**
+**Default Exports**  
 We can export a single value from a module and make that the default export.
 Below we export a single object with the functions as methods:
 ```javascript
