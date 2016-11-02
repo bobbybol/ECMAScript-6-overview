@@ -380,7 +380,7 @@ export {generateRandom as random, sum as doSum}
 **Importing complete utility**  
 We can also import a complete utility as an object and access exported values ar properties.
 ```javascript
-import 'utility' as utils;
+import 'lib/utility' as utils;
 
 console.log(utils.sum(28, 14)); //logs 42
 ```
