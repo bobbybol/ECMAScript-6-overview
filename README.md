@@ -340,7 +340,70 @@ See how the function parses the object that's passed to it and automatically map
 **[Back to top](#table-of-contents)**
 
 ## ES6 Modules 
+Modules are an extremely important feature in any programming language, which JavaScript sadly was lacking until now. We did have libraries such as CommonJS and AMD, but nothing native. That changes with ES6 modules, with which you can `export` functions/objects/classes and `import` them somewhere else.
 
+To show a basic setup let's imagine a **utility.js** file that _exports_ functionality, and a **app.js** file that _imports_ these functions.
+
+**lib/utility.js**
+```javascript
+function generateRandom() {
+  return Math.random();
+}
+
+function sum(a, b) {
+  return a + b;
+}
+
+export { generateRandom, sum }
+```
+
+The `generateRondom()` and `sum()` functions are not visible outside their own module unless they are explicitly _imported_, like we do in our app:
+
+**app.js**
+```javascript
+import { generateRandom, sum } from 'lib/utility';
+
+console.log(generateRandom()); //logs a random number
+console.log(sum(39, 3)); //logs 42
+```
+
+Note that one the first line, we import blocks of code from a module: _this module is simple a reference to the module file._ After importing, the functions `generateRondom()` and `sum()` are available in our app without any restriction.
+
+### Extra features
+
+**Renaming exports**
+We can rename the exported functions.
+```javascript
+export {generateRandom as random, sum as doSum}
+```
+
+**Importing complete utility**
+We can also import a complete utility as an object and access exported values ar properties.
+```javascript
+import 'utility' as utils;
+
+console.log(utils.sum(28, 14)); //logs 42
+```
+
+**Default Exports**
+We can export a single value from a module and make that the default export.
+Below we export a single object with the functions as methods:
+```javascript
+// lib/utility.js
+var utils = {
+  generateRandom: function() {
+    return Math.random();    
+  },
+  sum: function(a, b) {
+    return a + b;
+  }
+};
+export default utils;
+
+// app.js
+import utils from 'lib/utility';
+console.log(utils.sum(23, 19)); //logs 42
+```
 
 **[Back to top](#table-of-contents)**
 
