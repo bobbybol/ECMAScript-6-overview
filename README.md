@@ -300,7 +300,7 @@ var sandwich = {
   title: "The Julian",
   price: 42,
   description: "Disgustingly tasty",
-  ingredients: ['bread', 'peanut butter', 'sausage', 'cucumber', 'sambal']
+  ingredients: ['bread', 'peanut butter', 'old cheese', 'cucumber', 'sambal']
 }
 
 console.log(sandwich.title); //logs "The Julian"
